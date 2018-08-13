@@ -1,0 +1,76 @@
+一般步骤： 
+git add 文件名字或者git add .
+
+git commit -m ‘描述信息’ 
+git pull origin master(你自己的分支) 
+git push -u origin master 
+如果过程中出现‘please enter a commit message…’,首先esc然后输入 ：wq即可
+二、更新代码： 
+代码提交一般有五个步骤：1.查看目前代码的修改状态；2.查看代码修改内容；3.暂存需要提交的文件；4.提交已暂存的文件；5.同步到服务器
+
+查看目前代码的修改状态提交代码之前，首先应该检查目前所做的修改，运行git status命令
+a) 已暂存 （changes to be committed）
+
+new file //表示新建文件
+
+modified //表示修改文件
+
+deleted //表示删除文件
+
+b) 已修改 （changed but not updated）
+
+modified //表示修改文件
+
+deleted //表示删除文件
+
+另外，git 给出了可能需要的操作命令，git add/rm, gitcheckout –
+
+c) 未跟踪 （untracked files）
+
+查看代码修改的内容
+git diff
+
+比较某文件与最近提交节点的差异。
+
+注意：如果该文件已暂存，那么应该使用git diff –cached
+
+git diff
+
+比较某文件在提交节点a，节点b的差异。
+
+技巧：如果省略后面一个hashcode，则默认表示与上一提交节点比较。（也可以利用^运算符）
+
+暂存需要提交的文件如果是新建的文件则git add
+如果是修改的文件 
+则git add
+
+如果是删除的文件则 git rm
+
+提交已暂存的文件 
+git commit
+注意注释填写规范。
+
+git commit –amend
+
+修改最近一次提交。有时候如果提交注释书写有误或者漏提文件，可以使用此命令。
+
+同步到服务器 
+同步到服务器前先需要将服务器代码同步到本地
+命令： git pull
+
+如果执行失败，就按照提示还原有冲突的文件，然后再次尝试同步。
+
+命令：git checkout – <有冲突的文件路径>
+
+同步到服务器
+
+命令： git push origin <本地分支名>
+
+如果执行失败，一般是没有将服务器代码同步到本地导致的，先执行上面的git pull命令。
+
+拉取远程的Repo到本地（如果已经在本地，可以略过） 
+gitclonexxxxxx在本地仓库删除文件 git rm 我的文件 
+在本地仓库删除文件夹 
+gitrm?r我的文件夹/此处?r表示递归所有子目录，如果你要删除的，是空的文件夹，此处可以不用带上?r。提交代码 git commit -m”我的修改” 
+推送到远程仓库（比如GitHub） 
+$ git push origin xxxxxx
